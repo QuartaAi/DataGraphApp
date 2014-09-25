@@ -38,6 +38,24 @@ public class Drawer {
         cxt.setStroke(old_p);
     }
 
+    public int convertToY(int n) {
+        // converte un numero da -100 a 100 in un'ordinata da h a 0
+        int o = (int)(h/2);
+        if (n<-100 || n>100 || n==0) return o;
+        
+        // metodo matematico
+        o = (int)(-h/200) * n + (int)(h/2);
+        
+        /* -- metodo bruto
+        if ( n>0 ) {
+            o = (100-n) * (int)((h/2)/100);
+        } else {
+            o = (-n) * (int)((h/2)/100);
+        }
+        **/
+        return o;
+    }
+    
     public void drawBar( int x, int y, int w, int h ) {
         cxt.strokeRect(x, y, w, h);
         cxt.fillRect(x, y, w, h);
@@ -59,7 +77,7 @@ public class Drawer {
                 bh = (int)(h/2) - uly;
             } else {
                 uly = (int)h/2;
-                bh = (100+v[i]) * (int)((h/2)/100);
+                bh = (-v[i]) * (int)((h/2)/100);
             }
             drawBar( i*(bw+1), uly, bw, bh );
         }

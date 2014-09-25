@@ -35,10 +35,16 @@ public class DataGraphApp extends Application{
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Drawer d = new Drawer(gc);
         
-        int[] v = {30, 12, 83, -29 };
+        for (int i = -100; i <= 100; i+=10) {
+            System.out.println(i + " --> " + d.convertToY(i));
+        }
+        
+        /*
+        int[] v = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100 };
         d.drawAxes();
         d.drawBars( v );
         // d.drawBar();
+        */ 
         
         root.getChildren().add(canvas);
         stage.setScene(new Scene(root));
