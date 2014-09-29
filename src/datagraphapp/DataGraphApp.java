@@ -29,7 +29,7 @@ public class DataGraphApp extends Application{
     @Override
     public void start(Stage stage) {
         
-        stage.setTitle("Data Graph Application");
+        stage.setTitle("Draw Books Application");
         Group root = new Group();
         Canvas canvas = new Canvas(800, 600);
         GraphicsContext gc = canvas.getGraphicsContext2D();
