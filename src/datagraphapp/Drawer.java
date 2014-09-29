@@ -23,7 +23,7 @@ public class Drawer {
         this.h = cxt.getCanvas().getHeight();
         cxt.setLineWidth(1);
         cxt.setStroke(Color.RED);
-        cxt.setFill(Color.YELLOW);
+        cxt.setFill(Color.LIGHTYELLOW);
     }
     
     public void drawAxes () {
@@ -41,7 +41,7 @@ public class Drawer {
     public int convertToY(int n) {
         // converte un numero da -100 a 100 in un'ordinata da h a 0
         int o = (int)(h/2);
-        if (n<-100 || n>100 || n==0) return o;
+        if (n<=-100 || n>=100 || n==0) return o;
         
         // metodo matematico
         o = (int)(-h/200) * n + (int)(h/2);
@@ -62,11 +62,9 @@ public class Drawer {
     }
 
     void drawBars(int[] v) {
-        
         int bars = v.length;
         if ( w/4 < bars ) {
-            System.out.println("Quanto mi dispiace!");
-            System.out.println("w=" + w + "; bars=" + bars);
+            System.out.println("Troppi dati da visualizzare! - w=" + w + "; bars=" + bars);
             return;
         }
         int bw = (int) (w - bars) / bars;
@@ -81,8 +79,6 @@ public class Drawer {
             }
             drawBar( i*(bw+1), uly, bw, bh );
         }
-        
-        
     }
     
 }

@@ -31,7 +31,7 @@ public class DataGraphApp extends Application{
         
         stage.setTitle("Data Graph Application");
         Group root = new Group();
-        Canvas canvas = new Canvas(640, 480);
+        Canvas canvas = new Canvas(800, 600);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Drawer d = new Drawer(gc);
         
@@ -39,12 +39,9 @@ public class DataGraphApp extends Application{
             System.out.println(i + " --> " + d.convertToY(i));
         }
         
-        /*
         int[] v = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100 };
-        d.drawAxes();
-        d.drawBars( v );
-        // d.drawBar();
-        */ 
+        // d.drawAxes();
+          d.drawBars( v );
         
         root.getChildren().add(canvas);
         stage.setScene(new Scene(root));
